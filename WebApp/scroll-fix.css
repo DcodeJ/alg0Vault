@@ -1,0 +1,12 @@
+/* Scroll behavior overrides: every pane owns its own vertical scroll region. */
+html, body { overflow: hidden; }
+.shell, .view, .algorithm-view, .notes-view, .practice-view { min-height: 0; }
+.view { overflow: hidden; }
+.library-pane, .thread-pane, .practice-setup { min-height: 0; overflow-y: auto; }
+.algorithm-list, .thread-list, .detail-pane, .thread-detail, .challenge-wrap {
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+.thread-detail { display: flex; justify-content: center; }

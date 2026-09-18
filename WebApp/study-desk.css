@@ -1,0 +1,35 @@
+/* A readable working desk, retaining all existing appearance palettes. */
+body {font-size:1rem}
+.home-view {overflow-y:auto;padding:clamp(20px,3vw,48px);background:var(--detail)}
+.desk-heading {display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:28px}
+.desk-heading h1 {font-size:clamp(28px,3vw,42px);letter-spacing:-.035em;margin:0 0 8px}
+.desk-heading p {margin:0;color:var(--muted)}
+.desk-heading > div:last-child {min-width:220px}
+.home-view progress {width:100%;height:8px;accent-color:var(--accent)}
+.desk-metrics {display:flex;gap:24px;flex-wrap:wrap;color:var(--muted);margin:20px 0}
+.desk-metrics strong {color:var(--text);font-size:24px;margin-right:6px}
+.desk-plan {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0 28px}
+.desk-plan article,.desk-panel {background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;min-width:0}
+.desk-plan article:first-child {border-top:3px solid var(--accent)}
+.desk-step {color:var(--accent);font-size:.8rem;letter-spacing:.08em;font-weight:700}
+.home-view h2 {font-size:1.15rem;margin:12px 0 18px}
+.desk-plan p,.desk-panel p {color:var(--muted);line-height:1.65}
+.desk-link {width:100%;text-align:left;display:grid;grid-template-columns:1fr auto;gap:4px 12px;background:var(--field);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:14px;margin-top:10px;cursor:pointer;overflow-wrap:anywhere}
+.desk-link:hover {border-color:var(--accent);background:var(--hover)}
+.desk-link span {font-weight:600;font-size:.95rem}.desk-link small {color:var(--muted);font-size:.8rem;grid-column:1}.desk-link b {grid-column:2;grid-row:1 / 3;align-self:center;color:var(--accent)}
+.desk-columns {display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,1fr);gap:20px}
+.desk-search-row {display:flex;gap:8px}.desk-search-row input {width:100%;min-width:0}
+#deskSearchCount,#focusStatus {font-size:.85rem;color:var(--muted)}
+#deskResults {max-height:480px;overflow-y:auto}
+.desk-skills {display:grid;gap:15px;max-height:420px;overflow:auto;margin-top:20px}
+.desk-skill {display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:.9rem}.desk-skill b {color:var(--muted);font-weight:400}.desk-skill progress {grid-column:1 / -1}
+.focus-clock {font:600 3.2rem/1.3 Consolas,monospace;letter-spacing:-.04em;margin:14px 0}
+.focus-actions {display:flex;gap:8px;flex-wrap:wrap}.desk-panel + .desk-panel {margin-top:20px}
+.nav,.category-btn,.workspace-tools button,.control label,.block-label,.practice-setup label {font-size:.875rem}
+.algorithm-card h3,.thread-card h3 {font-size:1rem}
+.algorithm-card p,.thread-card p,.algorithm-card .pattern,.subtle,.badge,.savebar,.privacy,.stats span {font-size:.8rem}
+.codebox {font-size:.9rem;line-height:1.65}
+.learning-document {line-height:1.8}
+.desk-subtitle {color:var(--muted);font-size:.85rem}
+@media(max-width:1150px){.desk-plan{grid-template-columns:1fr}.desk-columns{grid-template-columns:1fr}.desk-heading{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}

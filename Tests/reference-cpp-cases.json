@@ -1,0 +1,41 @@
+{
+  "patterns": {
+    "sliding-window": "check(longestUnique(\"abba\")==2); check(longestUnique(\"\")==0);",
+    "fixed-window": "check(maxWindowSum({2,1,5,1,3},3)==9); check(maxWindowSum({-4,-2},1)==-2);",
+    "two-pointers": "check(sortedPair({1,2,4,7},6)==vector<int>({1,2})); check(sortedPair({},2).empty());",
+    "hash-map": "check(twoSum({3,3},6)==vector<int>({0,1})); check(twoSum({},0).empty());",
+    "prefix-sum": "check(countTargetSums({1,-1,1},1)==3); check(countTargetSums({0,0},0)==3);",
+    "fast-slow": "Node a,b; a.next=&b; check(!hasCycle(&a)); b.next=&a; check(hasCycle(&a));",
+    "linked-reversal": "Node a{1},b{2}; a.next=&b; Node* r=reverseList(&a); check(r==&b && r->next==&a && a.next==nullptr); check(reverseList(nullptr)==nullptr);",
+    "intervals": "check(mergeIntervals({{1,3},{2,6},{8,10}})==vector<array<int,2>>({{1,6},{8,10}})); check(mergeIntervals({}).empty());",
+    "binary-search": "check(lowerBound({1,2,2,4},2)==1); check(lowerBound({},2)==0);",
+    "answer-search": "check(minCapacity({1,2,3,4},2)==6); check(minCapacity({},1)==0);",
+    "monotonic-stack": "check(warmerDays({70,71,69,72})==vector<int>({1,2,1,0})); check(warmerDays({5,5})==vector<int>({0,0}));",
+    "monotonic-deque": "check(windowMaximum({1,3,-1,2},3)==vector<int>({3,3})); check(windowMaximum({4,4},1)==vector<int>({4,4}));",
+    "tree-dfs": "Node a,b,c{0,nullptr,&a},r{0,&b,&c}; check(depth(nullptr)==0); check(depth(&r)==3);",
+    "bfs": "check(distances({{1,2},{3},{},{}},0)==vector<int>({0,1,1,2})); check(distances({{},{}},0)==vector<int>({0,-1}));",
+    "topological": "check(topologicalOrder({{2},{2},{}})==vector<int>({0,1,2})); check(topologicalOrder({{0}}).empty());",
+    "union-find": "DisjointSet d(3); check(d.unite(0,1)); check(d.unite(1,2)); check(!d.unite(0,2));",
+    "dijkstra": "check(shortestPaths({{{1,5},{2,1}},{},{{1,1}}},0)==vector<long long>({0,2,1})); check(shortestPaths({{},{}},0)[1]==numeric_limits<long long>::max());",
+    "heap": "check(kthLargest({3,1,5,2},2)==3); check(kthLargest({2,2,1},2)==2);",
+    "backtracking": "auto actual=subsets({1,2}); sort(actual.begin(),actual.end()); vector<vector<int>> expected{{},{1},{2},{1,2}}; sort(expected.begin(),expected.end()); check(actual==expected); check(subsets({})==vector<vector<int>>({{}}));",
+    "dp-1d": "check(rob({2,7,9,3,1})==12); check(rob({})==0);",
+    "dp-2d": "check(lcsLength(\"abcde\",\"ace\")==3); check(lcsLength(\"\",\"a\")==0);",
+    "greedy": "check(canReachEnd({2,3,1,1,4})); check(!canReachEnd({3,2,1,0,4})); check(canReachEnd({0}));",
+    "trie": "Trie t; t.insert(\"apple\"); check(t.startsWith(\"app\") && !t.search(\"app\")); t.insert(\"app\"); check(t.search(\"app\"));",
+    "bitwise": "check(singleNumber({4,1,2,1,2})==4); check(singleNumber({-2,3,3})==-2);"
+  },
+  "algorithms": {
+    "Binary Search": "check(binarySearch({1,3,5},3)==1); check(binarySearch({},1)==-1);",
+    "Upper Bound": "check(upperBound({1,2,2,3},2)==3); check(upperBound({},2)==0);",
+    "Kadane's Algorithm": "check(maxSubarray({-3,-2,-8})==-2); check(maxSubarray({2,-1,4,-9})==5);",
+    "Bubble Sort": "mt19937 random(42);\nfor (int size=0;size<40;++size) {\n    vector<int> a(size);\n    for (int& value:a) value=static_cast<int>(random()%100);\n    auto expected=a; sort(expected.begin(),expected.end());\n    bubbleSort(a); check(a==expected);\n}\nvector<int> descending{5,4,3,2,1}, equal{7,7,7};\nbubbleSort(descending); check(descending==vector<int>({1,2,3,4,5}));\nbubbleSort(equal); check(equal==vector<int>({7,7,7}));\nvector<int> negative{-4,0,-9,3,-4}; bubbleSort(negative); check(negative==vector<int>({-9,-4,-4,0,3}));",
+    "Selection Sort": "mt19937 random(42);\nfor (int size=0;size<40;++size) {\n    vector<int> a(size);\n    for (int& value:a) value=static_cast<int>(random()%100);\n    auto expected=a; sort(expected.begin(),expected.end());\n    selectionSort(a); check(a==expected);\n}\nvector<int> descending{5,4,3,2,1}, equal{7,7,7};\nselectionSort(descending); check(descending==vector<int>({1,2,3,4,5}));\nselectionSort(equal); check(equal==vector<int>({7,7,7}));\nvector<int> negative{-4,0,-9,3,-4}; selectionSort(negative); check(negative==vector<int>({-9,-4,-4,0,3}));",
+    "Insertion Sort": "mt19937 random(42);\nfor (int size=0;size<40;++size) {\n    vector<int> a(size);\n    for (int& value:a) value=static_cast<int>(random()%100);\n    auto expected=a; sort(expected.begin(),expected.end());\n    insertionSort(a); check(a==expected);\n}\nvector<int> descending{5,4,3,2,1}, equal{7,7,7};\ninsertionSort(descending); check(descending==vector<int>({1,2,3,4,5}));\ninsertionSort(equal); check(equal==vector<int>({7,7,7}));\nvector<int> negative{-4,0,-9,3,-4}; insertionSort(negative); check(negative==vector<int>({-9,-4,-4,0,3}));",
+    "Merge Sort": "mt19937 random(42);\nfor (int size=0;size<40;++size) {\n    vector<int> a(size);\n    for (int& value:a) value=static_cast<int>(random()%100);\n    auto expected=a; sort(expected.begin(),expected.end());\n    mergeSort(a); check(a==expected);\n}\nvector<int> descending{5,4,3,2,1}, equal{7,7,7};\nmergeSort(descending); check(descending==vector<int>({1,2,3,4,5}));\nmergeSort(equal); check(equal==vector<int>({7,7,7}));\nvector<int> negative{-4,0,-9,3,-4}; mergeSort(negative); check(negative==vector<int>({-9,-4,-4,0,3}));",
+    "Quick Sort": "mt19937 random(42);\nfor (int size=0;size<40;++size) {\n    vector<int> a(size);\n    for (int& value:a) value=static_cast<int>(random()%100);\n    auto expected=a; sort(expected.begin(),expected.end());\n    quickSort(a); check(a==expected);\n}\nvector<int> descending{5,4,3,2,1}, equal{7,7,7};\nquickSort(descending); check(descending==vector<int>({1,2,3,4,5}));\nquickSort(equal); check(equal==vector<int>({7,7,7}));\nvector<int> negative{-4,0,-9,3,-4}; quickSort(negative); check(negative==vector<int>({-9,-4,-4,0,3}));",
+    "Heap Sort": "mt19937 random(42);\nfor (int size=0;size<40;++size) {\n    vector<int> a(size);\n    for (int& value:a) value=static_cast<int>(random()%100);\n    auto expected=a; sort(expected.begin(),expected.end());\n    heapSort(a); check(a==expected);\n}\nvector<int> descending{5,4,3,2,1}, equal{7,7,7};\nheapSort(descending); check(descending==vector<int>({1,2,3,4,5}));\nheapSort(equal); check(equal==vector<int>({7,7,7}));\nvector<int> negative{-4,0,-9,3,-4}; heapSort(negative); check(negative==vector<int>({-9,-4,-4,0,3}));",
+    "Counting Sort": "mt19937 random(42);\nfor (int size=0;size<40;++size) {\n    vector<int> a(size);\n    for (int& value:a) value=static_cast<int>(random()%100);\n    auto expected=a; sort(expected.begin(),expected.end());\n    countingSort(a); check(a==expected);\n}\nvector<int> descending{5,4,3,2,1}, equal{7,7,7};\ncountingSort(descending); check(descending==vector<int>({1,2,3,4,5}));\ncountingSort(equal); check(equal==vector<int>({7,7,7}));",
+    "Radix Sort": "mt19937 random(42);\nfor (int size=0;size<40;++size) {\n    vector<int> a(size);\n    for (int& value:a) value=static_cast<int>(random()%100);\n    auto expected=a; sort(expected.begin(),expected.end());\n    radixSort(a); check(a==expected);\n}\nvector<int> descending{5,4,3,2,1}, equal{7,7,7};\nradixSort(descending); check(descending==vector<int>({1,2,3,4,5}));\nradixSort(equal); check(equal==vector<int>({7,7,7}));"
+  }
+}

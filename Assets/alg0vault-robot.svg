@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Robot">
+  <line x1="128" y1="34" x2="128" y2="66" stroke="#34445d" stroke-width="12"/>
+  <circle cx="128" cy="27" r="14" fill="#ff6b70" stroke="#34445d" stroke-width="7"/>
+  <rect x="15" y="111" width="33" height="58" rx="12" fill="#ff6b70" stroke="#34445d" stroke-width="7"/>
+  <rect x="208" y="111" width="33" height="58" rx="12" fill="#ff6b70" stroke="#34445d" stroke-width="7"/>
+  <rect x="40" y="63" width="176" height="165" rx="32" fill="#b9cce0" stroke="#34445d" stroke-width="9"/>
+  <rect x="53" y="75" width="150" height="137" rx="23" fill="#e3edf7"/>
+  <circle cx="89" cy="120" r="22" fill="#34445d"/>
+  <circle cx="167" cy="120" r="22" fill="#34445d"/>
+  <circle cx="89" cy="120" r="12" fill="#65d7f2"/>
+  <circle cx="167" cy="120" r="12" fill="#65d7f2"/>
+  <circle cx="85" cy="116" r="4" fill="#ffffff"/>
+  <circle cx="163" cy="116" r="4" fill="#ffffff"/>
+  <circle cx="128" cy="149" r="10" fill="#ff6b70"/>
+  <rect x="76" y="174" width="104" height="29" rx="9" fill="#34445d"/>
+  <line x1="96" y1="180" x2="96" y2="197" stroke="#e3edf7" stroke-width="5"/>
+  <line x1="117" y1="180" x2="117" y2="197" stroke="#e3edf7" stroke-width="5"/>
+  <line x1="139" y1="180" x2="139" y2="197" stroke="#e3edf7" stroke-width="5"/>
+  <line x1="160" y1="180" x2="160" y2="197" stroke="#e3edf7" stroke-width="5"/>
+</svg>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>alg0Vault</title>
+  <link rel="icon" type="image/svg+xml" href="../Assets/alg0vault-robot.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../Assets/alg0vault.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="scroll-fix.css">
+  <link rel="stylesheet" href="workspace.css">
+  <link rel="stylesheet" href="patterns.css">
+  <link rel="stylesheet" href="learning.css">
+  <link rel="stylesheet" href="themes.css">
+  <link rel="stylesheet" href="study-tools.css">
+  <link rel="stylesheet" href="local-files.css">
+  <link rel="stylesheet" href="study-desk.css">
+  <link rel="stylesheet" href="polish.css">
+  <link rel="stylesheet" href="code-themes.css">
+  <link rel="stylesheet" href="locale.css">
+</head>
+<body data-theme="current">
+  <header class="topbar">
+    <div class="brand"><img src="../Assets/alg0vault-robot.svg" alt=""><div><strong>alg0VAULT</strong><span data-i18n="ui000">Algorithms + semester notes</span></div></div>
+    <div class="top-actions"><div class="locale-switch" role="group" aria-label="Interface language" data-i18n-aria-label="ui334" title="Current code, notes, and lesson content keep their original language." data-i18n-title="ui333"><button type="button" id="localeEnglish" data-ui-locale="en" lang="en" aria-label="English" aria-pressed="true">EN</button><button type="button" id="localePolish" data-ui-locale="pl" lang="pl" aria-label="Polski" aria-pressed="false">PL</button></div><span id="localeStatus" class="locale-status" role="status"></span><span id="saveStatus" class="local-pill" role="status">Ready</span><label><span data-i18n="ui001">Code</span> <select id="languageSelect" aria-label="Programming language"><option value="csharp">C#</option><option value="cpp">C++</option><option value="python">Python</option></select></label><label><span data-i18n="ui002">Appearance</span> <select id="themeSelect"><option value="Current" data-i18n="ui306">Current</option><option value="Dark" data-i18n="ui307">Dark</option><option value="Purple" data-i18n="ui308">Purple</option><option value="White" data-i18n="ui309">White</option><option value="Ocean" data-i18n="ui310">Ocean</option><option value="Emerald" data-i18n="ui311">Emerald</option><option value="Rose" data-i18n="ui312">Rose</option><option value="Amber" data-i18n="ui313">Amber</option><option value="Crimson" data-i18n="ui314">Crimson</option><option value="Slate" data-i18n="ui315">Slate</option><option value="Sky" data-i18n="ui316">Sky</option><option value="Paper" data-i18n="ui317">Paper</option></select></label></div>
+  </header>
+
+  <main class="shell">
+    <aside class="sidebar">
+      <button class="primary wide" id="newAlgorithm" data-i18n="ui004">＋ New algorithm</button>
+      <button class="secondary wide" id="newNote" data-i18n="ui005">＋ New note thread</button>
+      <p class="eyebrow" data-i18n="ui006">LIBRARY</p>
+      <nav>
+        <button class="nav" data-view="home">⌂ <span data-i18n="ui007">Today</span></button>
+        <button class="nav active" data-view="algorithms">▦ <span data-i18n="ui008">All algorithms</span><b id="algorithmCount">0</b></button>
+        <button class="nav" data-view="favorites">★ <span data-i18n="ui009">Favorites</span></button>
+        <button class="nav" data-view="notes">▤ <span data-i18n="ui010">Notes Hub</span></button>
+        <button class="nav" data-view="practice">⚡ <span data-i18n="ui011">Interview Practice</span></button>
+        <button class="nav" data-view="patterns">◇ <span data-i18n="ui012">LeetCode Patterns</span></button>
+        <button class="nav" data-view="learning">↗ <span data-i18n="ui013">Study Hub</span></button>
+      </nav>
+      <p class="eyebrow" data-i18n="ui014">LOCAL SAVE FILE</p>
+      <div class="workspace-tools" aria-label="Workspace tools" data-i18n-aria-label="ui015">
+        <button class="ghost" id="openSaveFile" data-i18n="ui016">Open save file</button>
+        <button class="ghost" id="saveWorkspaceFile" data-i18n="ui017">Save file</button>
+        <button class="ghost" id="saveWorkspaceAs" data-i18n="ui018">Save file as…</button>
+        <button class="ghost" id="exportBackup" data-i18n="ui019">Export backup</button>
+        <button class="ghost" id="importBackup" data-i18n="ui020">Import backup</button>
+      </div>
+      <p id="fileStatus" class="file-status" role="status">Browser autosave is separate from your save file.</p>
+      <p class="eyebrow" data-i18n="ui022">CATEGORIES</p>
+      <div id="categories" class="categories"></div>
+      <div class="stats"><div><b id="totalStat">0</b><span data-i18n="ui023">TOTAL</span></div><div><b id="masteredStat">0</b><span data-i18n="ui024">MASTERED</span></div><div><b id="reviewStat">0</b><span data-i18n="ui025">REVIEWS</span></div></div>
+      <p class="privacy" data-i18n="ui026">100% local · No account · No uploads</p>
+    </aside>
+
+    <section id="homeView" class="view home-view hidden" aria-label="Today's study desk" data-i18n-aria-label="ui027">
+      <div class="desk-heading"><div><h1 data-i18n="ui028">Your study desk</h1><p data-i18n="ui029">Recall one idea. Learn one concept. Build something small.</p></div><div><p id="deskProgress"></p><progress id="deskMeter" max="40" value="0" aria-label="Roadmap progress" data-i18n-aria-label="ui030"></progress></div></div>
+      <div class="desk-metrics"><span><strong id="deskDue">0</strong><span data-i18n="ui031">reviews due</span></span><span><strong id="deskMastered">0</strong><span data-i18n="ui032">algorithms self-rated mastered</span></span></div>
+      <div id="deskPlan" class="desk-plan"></div>
+      <div class="desk-columns"><section class="desk-panel"><h2 data-i18n="ui033">Find anything</h2><label for="deskSearch" class="desk-subtitle" data-i18n="ui034">Search your study workspace · Ctrl+K</label><div class="desk-search-row"><input id="deskSearch" class="field" placeholder="Try encapsulation, binary search or a course name" data-i18n-placeholder="ui035"><button id="deskClear" class="ghost" data-i18n="ui036">Clear</button></div><p id="deskSearchCount" role="status"></p><div id="deskResults"></div></section>
+      <div><section class="desk-panel"><h2 data-i18n="ui037">One focused session</h2><label for="focusLength" data-i18n="ui038">Session length</label><select id="focusLength"><option value="25" data-i18n="ui039">25 minutes · focus</option><option value="50" data-i18n="ui040">50 minutes · deep work</option><option value="5" data-i18n="ui041">5 minutes · break</option></select><div id="focusClock" class="focus-clock" aria-label="Time remaining" data-i18n-aria-label="ui042">25:00</div><div class="focus-actions"><button id="focusToggle" class="primary">Start</button><button id="focusReset" class="ghost" data-i18n="ui045">Reset</button></div><p id="focusStatus" role="status"></p></section><section class="desk-panel"><h2 data-i18n="ui046">Your algorithm skills</h2><p class="desk-subtitle" data-i18n="ui047">Based on your own mastery ratings, not an assessment.</p><div id="deskSkills" class="desk-skills"></div></section></div></div>
+    </section>
+    <section id="algorithmView" class="view algorithm-view">
+      <section class="library-pane">
+        <div class="pane-head"><div><p class="eyebrow" data-i18n="ui048">ALGORITHM LIBRARY</p><h1 id="libraryTitle">All algorithms</h1></div><span id="resultCount"></span></div>
+        <input id="searchInput" class="field" aria-label="Search algorithms" data-i18n-aria-label="ui049" placeholder="Search algorithms, patterns, tags…" data-i18n-placeholder="ui050">
+        <label for="priorityFilter" data-i18n="ui051">Study priority</label>
+        <select id="priorityFilter"><option value="" data-i18n="ui052">All priorities</option><option value="Essential" data-i18n="ui053">Essential</option><option value="Core" data-i18n="ui054">Core</option><option value="Advanced" data-i18n="ui055">Advanced</option><option value="Unranked" data-i18n="ui056">Unranked</option></select>
+        <div class="catalog-actions"><button id="essentialAlgorithms" class="ghost" data-i18n="ui057">Learn essentials first</button><button id="addAlgorithmPack" class="ghost">Add new algorithm pack</button></div>
+        <p class="priority-help" data-i18n="ui059">Essential: foundations first. Core: next-step practice. Advanced: later depth. These are study recommendations, not universal job requirements.</p>
+        <div class="filter-row"><select id="difficultyFilter"><option value="Any difficulty" data-i18n="ui060">Any difficulty</option><option value="Easy" data-i18n="ui061">Easy</option><option value="Medium" data-i18n="ui062">Medium</option><option value="Hard" data-i18n="ui063">Hard</option></select><select id="sortFilter"><option value="recent" data-i18n="ui064">Recently edited</option><option value="title" data-i18n="ui065">Title A–Z</option><option value="difficulty" data-i18n="ui066">Difficulty</option><option value="category" data-i18n="ui067">Category</option><option value="mastery" data-i18n="ui068">Mastery progress</option></select></div>
+        <button class="filter-reset" id="clearFilters" data-i18n="ui069">Reset filters</button>
+        <div id="algorithmList" class="algorithm-list" aria-label="Algorithms" data-i18n-aria-label="ui070"></div>
+      </section>
+      <section id="detailPane" class="detail-pane"></section>
+    </section>
+
+    <section id="notesView" class="view hidden notes-view">
+      <section class="thread-pane">
+        <div class="pane-head"><div><p class="eyebrow mint" data-i18n="ui071">NOTES HUB</p><h1 data-i18n="ui072">Semester threads</h1></div><span id="threadCount" class="count-pill">0</span></div>
+        <input id="noteSearch" class="field" aria-label="Search notes" data-i18n-aria-label="ui073" placeholder="Search threads, courses, notes…" data-i18n-placeholder="ui074">
+        <select id="semesterFilter" aria-label="Filter notes by semester" data-i18n-aria-label="ui075"><option value="" data-i18n="ui076">All semesters</option></select>
+        <div id="threadList" class="thread-list"></div>
+        <button class="primary wide sticky-action" id="createThread" data-i18n="ui077">＋ Create new thread</button>
+      </section>
+      <section id="threadDetail" class="thread-detail"></section>
+    </section>
+
+    <section id="practiceView" class="view hidden practice-view">
+      <div class="practice-setup">
+        <p class="eyebrow mint" data-i18n="ui078">PRACTICE SETUP</p><h1><span data-i18n="ui079">Build recall,</span><br><span data-i18n="ui080">not recognition</span></h1><p class="muted" data-i18n="ui081">Choose a pool, solve aloud, then grade your confidence honestly.</p>
+        <label><span data-i18n="ui082">DIFFICULTY</span><select id="practiceDifficulty"><option value="Any difficulty" data-i18n="ui060">Any difficulty</option><option value="Easy" data-i18n="ui061">Easy</option><option value="Medium" data-i18n="ui062">Medium</option><option value="Hard" data-i18n="ui063">Hard</option></select></label>
+        <label><span data-i18n="ui083">STUDY PRIORITY</span><select id="practicePriority"><option value="" data-i18n="ui052">All priorities</option><option value="Essential" data-i18n="ui053">Essential</option><option value="Core" data-i18n="ui054">Core</option><option value="Advanced" data-i18n="ui055">Advanced</option><option value="Unranked" data-i18n="ui056">Unranked</option></select></label>
+        <label><span data-i18n="ui084">CATEGORY</span><select id="practiceCategory"><option value="Any category" data-i18n="ui086">Any category</option></select></label>
+        <label><span data-i18n="ui085">MASTERY</span><select id="practiceMastery"><option value="Any mastery" data-i18n="ui087">Any mastery</option><option value="New" data-i18n="ui088">New</option><option value="Learning" data-i18n="ui089">Learning</option><option value="Confident" data-i18n="ui090">Confident</option><option value="Mastered" data-i18n="ui091">Mastered</option></select></label>
+        <button id="generateChallenge" class="primary wide" data-i18n="ui092">Generate challenge</button>
+        <div class="progress-card"><p class="eyebrow" data-i18n="ui093">YOUR PROGRESS</p><div><b id="practiceMastered">0</b><span data-i18n="ui024">MASTERED</span><b id="practiceReviews">0</b><span data-i18n="ui025">REVIEWS</span></div></div>
+      </div>
+      <div class="challenge-wrap"><article id="challengeCard" class="challenge-card"></article></div>
+    </section>
+    <section id="patternsView" class="view hidden patterns-view" aria-label="LeetCode pattern guides" data-i18n-aria-label="ui094">
+      <section class="pattern-library">
+        <div class="pane-head"><div><p class="eyebrow" data-i18n="ui095">INTERVIEW PLAYBOOK</p><h1 data-i18n="ui012">LeetCode Patterns</h1></div></div>
+        <p class="muted pattern-intro" data-i18n="ui096">Learn the clues. Prove the approach. Adapt the template.</p>
+        <div class="pattern-mode" aria-label="Browse mode" data-i18n-aria-label="ui097"><button id="browsePatterns" class="ghost" aria-pressed="true" data-i18n="ui098">24 patterns</button><button id="browseQuestions" class="ghost" aria-pressed="false" data-i18n="ui099">100 questions</button></div>
+        <input id="patternSearch" class="field" aria-label="Search patterns and practice questions" data-i18n-aria-label="ui100" placeholder="Try sliding window, shortest path, coin change…" data-i18n-placeholder="ui101">
+        <select id="patternGroup" aria-label="Filter pattern family" data-i18n-aria-label="ui102">
+          <option value="" data-i18n="ui103">All pattern families</option>
+          <option value="Arrays &amp; strings" data-i18n="ui104">Arrays &amp; strings</option><option value="Search &amp; ordering" data-i18n="ui105">Search &amp; ordering</option>
+          <option value="Trees &amp; graphs" data-i18n="ui106">Trees &amp; graphs</option><option value="Decisions &amp; optimization" data-i18n="ui107">Decisions &amp; optimization</option>
+        </select>
+        <div class="pattern-list-toolbar"><span id="patternCount" role="status"></span><button id="resetPatterns" class="filter-reset" data-i18n="ui045">Reset</button></div>
+        <div id="patternList" class="pattern-list" aria-label="Pattern guides" data-i18n-aria-label="ui108"></div>
+      </section>
+      <section id="patternDetail" class="pattern-detail" aria-label="Selected pattern lesson" data-i18n-aria-label="ui109"></section>
+    </section>
+    <section id="learningView" class="view hidden learning-view" aria-label="University and C# study hub" data-i18n-aria-label="ui110">
+      <section class="learning-library">
+        <p class="eyebrow" data-i18n="ui111">UNIVERSITY + C# CAREER</p>
+        <h1 data-i18n="ui013">Study Hub</h1>
+        <p class="subtle" data-i18n="ui112">The code switch changes algorithm and pattern examples. C# course lessons remain in C#.</p>
+        <button id="studyToday" class="secondary wide" data-i18n="ui113">Today · review &amp; bookmarks</button>
+        <p class="muted" data-i18n="ui114">Your classes, programming roadmap and notes.</p>
+        <div class="learning-progress"><span id="learningProgress" role="status"></span><progress id="learningMeter" max="40" value="0" aria-label="Roadmap weeks completed" data-i18n-aria-label="ui115"></progress><button id="learningContinue" class="primary wide">Continue roadmap</button></div>
+        <button id="learningCourses" class="secondary wide" data-i18n="ui117">University courses · 20 subjects</button>
+        <span id="courseProgress" class="course-progress" role="status">0 / 20 guides reviewed</span>
+        <label for="learningSearch" data-i18n="ui118">Search your learning library</label>
+        <input id="learningSearch" class="field" placeholder="Try null, encapsulation, SQL…" data-i18n-placeholder="ui119" type="search">
+        <label for="learningStatus" data-i18n="ui120">Study status</label>
+        <select id="learningStatus"><option value="" data-i18n="ui121">All statuses</option><option value="bookmarked" data-i18n="ui122">Bookmarked</option><option value="due" data-i18n="ui123">Review due now</option><option value="unfinished" data-i18n="ui124">Not completed / reviewed</option></select>
+        <label for="learningKind" data-i18n="ui125">Show</label>
+        <select id="learningKind"><option value="" data-i18n="ui126">Everything</option><option value="course" data-i18n="ui127">University courses</option><option value="week" data-i18n="ui128">40-week roadmap</option><option value="video" data-i18n="ui129">Video chapters</option><option value="glossary" data-i18n="ui130">Programming glossary</option><option value="reference" data-i18n="ui131">Guides &amp; resources</option></select>
+        <div class="learning-list-tools"><span id="learningCount" role="status"></span><button id="learningReset" class="filter-reset" data-i18n="ui045">Reset</button></div>
+        <div id="learningList" class="learning-list" aria-label="Learning lessons" data-i18n-aria-label="ui132"></div>
+      </section>
+      <section id="learningDetail" class="learning-detail" aria-label="Selected learning lesson" data-i18n-aria-label="ui133"></section>
+    </section>
+  </main>
+
+  <div id="toast" role="status"></div>
+  <input type="file" id="backupFile" accept="application/json,.json" hidden>
+  <input type="file" id="saveFileInput" accept="application/json,.json" hidden>
+  <datalist id="complexityOptions">
+    <option value="O(1)"><option value="O(log n)"><option value="O(n)"><option value="O(n log n)">
+    <option value="O(n²)"><option value="O(n³)"><option value="O(2ⁿ)"><option value="O(n!)">
+    <option value="O(V + E)"><option value="O(V log V)">
+  </datalist>
+  <script src="locale-data.js"></script>
+  <script src="locale.js"></script>
+  <script src="workspace-data.js"></script>
+  <script src="algorithms.js"></script>
+  <script src="algorithm-pack.js"></script>
+  <script src="language-samples.js"></script>
+  <script src="languages.js"></script>
+  <script src="local-files.js"></script>
+  <script src="patterns-data.js"></script>
+  <script src="pattern-tutorials.js"></script>
+  <script src="questions-data.js"></script>
+  <script src="patterns.js"></script>
+  <script src="learning-data.js"></script>
+  <script src="study-tools.js"></script>
+  <script src="learning.js"></script>
+  <script src="study-desk.js"></script>
+  <script src="app.js"></script>
+  
+</body>
+</html>

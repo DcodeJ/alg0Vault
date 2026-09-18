@@ -1,0 +1,274 @@
+{
+  "Longest Increasing Subsequence": {
+    "python": "assert lis_length([10,9,2,5,3,7,101,18])==4; assert lis_length([2,2])==1; assert lis_length([])==0",
+    "cpp": "check(lisLength({10,9,2,5,3,7,101,18})==4); check(lisLength({2,2})==1); check(lisLength({})==0);"
+  },
+  "Prefix Sum Range Query": {
+    "python": "assert range_sum(prefix_sums([2,-1,4]),0,2)==5; assert prefix_sums([])==[0]",
+    "cpp": "check(rangeSum(prefixSums({2,-1,4}),0,2)==5); check(prefixSums({})==vector<long long>{0});"
+  },
+  "Depth-First Search": {
+    "python": "assert dfs([[1,2],[2],[]],0)==[0,1,2]; assert dfs([[0]],0)==[0]",
+    "cpp": "check(dfs({{1,2},{2},{}},0)==vector<int>({0,1,2})); check(dfs({{0}},0)==vector<int>{0});"
+  },
+  "Kruskal's Minimum Spanning Tree": {
+    "python": "assert kruskal(3,[(0,1,2),(1,2,-1),(0,2,5)])==1; assert kruskal(3,[]) is None; assert kruskal(0,[])==0",
+    "cpp": "check(kruskal(3,{{0,1,2},{1,2,-1},{0,2,5}})==1); check(!kruskal(3,{})); check(kruskal(0,{})==0);"
+  },
+  "Binary Tree Level Order": {
+    "python": "assert level_order(Node(1,Node(2),Node(3)))==[[1],[2,3]]; assert level_order(None)==[]",
+    "cpp": "Node a{2},b{3},r{1,&a,&b}; check(levelOrder(&r)==vector<vector<int>>({{1},{2,3}})); check(levelOrder(nullptr).empty());"
+  },
+  "Lowest Common Ancestor": {
+    "python": "p,q=Node(2),Node(3); r=Node(1,p,q); assert lowest_common_ancestor(r,p,q) is r; assert lowest_common_ancestor(r,r,p) is r",
+    "cpp": "Node p{2},q{3},r{1,&p,&q}; check(lowestCommonAncestor(&r,&p,&q)==&r);"
+  },
+  "KMP String Search": {
+    "python": "assert kmp_search(\"abababc\",\"ababc\")==2; assert kmp_search(\"abc\",\"d\")==-1; assert kmp_search(\"\",\"\")==0",
+    "cpp": "check(kmpSearch(\"abababc\",\"ababc\")==2); check(kmpSearch(\"abc\",\"d\")==-1); check(kmpSearch(\"\",\"\")==0);"
+  },
+  "Coin Change": {
+    "python": "assert coin_change([1,2,5],11)==3; assert coin_change([2],3)==-1; assert coin_change([],0)==0",
+    "cpp": "check(coinChange({1,2,5},11)==3); check(coinChange({2},3)==-1); check(coinChange({},0)==0);"
+  },
+  "0/1 Knapsack": {
+    "python": "assert knapsack([2,3,4],[4,5,7],5)==9; assert knapsack([0],[3],0)==3; assert knapsack([],[],0)==0",
+    "cpp": "check(knapsack({2,3,4},{4,5,7},5)==9); check(knapsack({0},{3},0)==3);"
+  },
+  "Generate Permutations": {
+    "python": "assert len(permutations([1,1,2]))==3; assert permutations([])==[[]]",
+    "cpp": "check(permutations({1,1,2}).size()==3); check(permutations({}).size()==1);"
+  },
+  "Next Greater Element": {
+    "python": "assert next_greater([2,1,2,4,3])==[4,2,4,-1,-1]; assert next_greater([])==[]",
+    "cpp": "check(nextGreater({2,1,2,4,3})==vector<int>({4,2,4,-1,-1}));"
+  },
+  "Top K Frequent Elements": {
+    "python": "assert top_k_frequent([1,1,1,2,2,3],2)==[1,2]; assert top_k_frequent([],0)==[]",
+    "cpp": "check(topKFrequent({1,1,1,2,2,3},2)==vector<int>({1,2})); check(topKFrequent({},0).empty());"
+  },
+  "Detect Directed Cycle": {
+    "python": "assert has_directed_cycle([[1],[0]]); assert not has_directed_cycle([[1],[]]); assert not has_directed_cycle([])",
+    "cpp": "check(hasDirectedCycle({{1},{0}}));check(!hasDirectedCycle({{1},{}}));"
+  },
+  "Valid Parentheses": {
+    "python": "assert valid_parentheses(\"([])\"); assert not valid_parentheses(\"([)]\"); assert not valid_parentheses(\"a\"); assert valid_parentheses(\"\")",
+    "cpp": "check(validParentheses(\"([])\"));check(!validParentheses(\"([)]\"));check(!validParentheses(\"a\"));"
+  },
+  "Valid Anagram": {
+    "python": "assert valid_anagram(\"anagram\",\"nagaram\");assert not valid_anagram(\"a\",\"aa\")",
+    "cpp": "check(validAnagram(\"anagram\",\"nagaram\"));check(!validAnagram(\"a\",\"aa\"));"
+  },
+  "Group Anagrams": {
+    "python": "assert group_anagrams([\"eat\",\"tea\",\"tan\"])==[[\"eat\",\"tea\"],[\"tan\"]];assert group_anagrams([])==[]",
+    "cpp": "check(groupAnagrams({\"eat\",\"tea\",\"tan\"})==vector<vector<string>>({{\"eat\",\"tea\"},{\"tan\"}}));"
+  },
+  "Valid Palindrome": {
+    "python": "assert valid_palindrome(\"A man, a plan, a canal: Panama\");assert not valid_palindrome(\"race a car\");assert valid_palindrome(\"\")",
+    "cpp": "check(validPalindrome(\"A man, a plan, a canal: Panama\"));check(!validPalindrome(\"race a car\"));"
+  },
+  "Merge Two Sorted Lists": {
+    "python": "a,b=Node(1,Node(3)),Node(2);r=merge_lists(a,b);assert [r.value,r.next.value,r.next.next.value]==[1,2,3];assert merge_lists(None,None) is None",
+    "cpp": "Node a{1},b{3},c{2};a.next=&b;Node* r=mergeLists(&a,&c);check(r==&a&&r->next==&c&&c.next==&b);"
+  },
+  "Remove Nth Node From End": {
+    "python": "assert remove_nth(Node(1),1) is None;r=remove_nth(Node(1,Node(2,Node(3))),2);assert r.next.value==3",
+    "cpp": "Node a{1};check(removeNth(&a,1)==nullptr);"
+  },
+  "Three Sum": {
+    "python": "assert three_sum([-1,0,1,2,-1,-4])==[[-1,-1,2],[-1,0,1]];assert three_sum([0,0,0,0])==[[0,0,0]]",
+    "cpp": "check(threeSum({-1,0,1,2,-1,-4})==vector<vector<int>>({{-1,-1,2},{-1,0,1}}));"
+  },
+  "Container With Most Water": {
+    "python": "assert max_water([1,8,6,2,5,4,8,3,7])==49;assert max_water([])==0",
+    "cpp": "check(maxWater({1,8,6,2,5,4,8,3,7})==49);check(maxWater({})==0);"
+  },
+  "Trapping Rain Water": {
+    "python": "assert trapped_water([0,1,0,2,1,0,1,3,2,1,2,1])==6;assert trapped_water([])==0",
+    "cpp": "check(trappedWater({0,1,0,2,1,0,1,3,2,1,2,1})==6);check(trappedWater({})==0);"
+  },
+  "Product of Array Except Self": {
+    "python": "assert product_except_self([1,2,3,4])==[24,12,8,6];assert product_except_self([0,0,2])==[0,0,0]",
+    "cpp": "check(productExceptSelf({1,2,3,4})==vector<long long>({24,12,8,6}));check(productExceptSelf({0,0,2})==vector<long long>({0,0,0}));"
+  },
+  "Rotate Array": {
+    "python": "assert rotate_array([1,2,3,4],1)==[4,1,2,3];assert rotate_array([1,2,3],-1)==[2,3,1];assert rotate_array([],3)==[]",
+    "cpp": "vector<int>a{1,2,3,4};rotateArray(a,1);check(a==vector<int>({4,1,2,3}));"
+  },
+  "Longest Consecutive Sequence": {
+    "python": "assert longest_consecutive([100,4,200,1,3,2,2])==4;assert longest_consecutive([])==0",
+    "cpp": "check(longestConsecutive({100,4,200,1,3,2,2})==4);check(longestConsecutive({numeric_limits<int>::max(),numeric_limits<int>::min()})==1);"
+  },
+  "Best Time to Buy and Sell Stock": {
+    "python": "assert max_profit([7,1,5,3,6,4])==5;assert max_profit([3,2,1])==0;assert max_profit([])==0",
+    "cpp": "check(maxProfit({7,1,5,3,6,4})==5);check(maxProfit({3,2,1})==0);"
+  },
+  "Binary Tree Inorder Traversal": {
+    "python": "assert inorder(Node(2,Node(1),Node(3)))==[1,2,3];assert inorder(None)==[]",
+    "cpp": "Node a{1},b{3},r{2,&a,&b};check(inorder(&r)==vector<int>({1,2,3}));"
+  },
+  "Validate Binary Search Tree": {
+    "python": "assert valid_bst(Node(2,Node(1),Node(3)));assert not valid_bst(Node(2,Node(2)))",
+    "cpp": "Node a{1},b{3},r{2,&a,&b};check(validBst(&r));a.value=2;check(!validBst(&r));"
+  },
+  "Diameter of Binary Tree": {
+    "python": "assert diameter(Node(1,Node(2,Node(4),Node(5)),Node(3)))==3;assert diameter(None)==0",
+    "cpp": "Node a{4},b{5},l{2,&a,&b},r{3},root{1,&l,&r};check(diameter(&root)==3);"
+  },
+  "Number of Islands": {
+    "python": "assert count_islands([\"110\",\"010\",\"001\"])==2;assert count_islands([])==0",
+    "cpp": "check(countIslands({\"110\",\"010\",\"001\"})==2);check(countIslands({})==0);"
+  },
+  "Bellman-Ford Shortest Paths": {
+    "python": "assert bellman_ford(4,[(0,1,4),(0,2,5),(1,2,-2)],0)==[0,4,2,None]\nassert bellman_ford(3,[(1,2,-1),(2,1,-1)],0)==[0,None,None]\ntry: bellman_ford(2,[(0,1,-1),(1,0,-1)],0)\nexcept ValueError: pass\nelse: assert False",
+    "cpp": "check(bellmanFord(4,{{0,1,4},{0,2,5},{1,2,-2}},0)==vector<optional<long long>>({0,4,2,nullopt}));\ncheck(bellmanFord(3,{{1,2,-1},{2,1,-1}},0)==vector<optional<long long>>({0,nullopt,nullopt}));\nbool threw=false; try { bellmanFord(2,{{0,1,-1},{1,0,-1}},0); } catch(const invalid_argument&) { threw=true; } check(threw);"
+  },
+  "Climbing Stairs": {
+    "python": "assert [climbing_stairs(i) for i in range(6)]==[1,1,2,3,5,8]",
+    "cpp": "check(climbingStairs(0)==1); check(climbingStairs(5)==8);"
+  },
+  "Edit Distance": {
+    "python": "assert edit_distance(\"horse\",\"ros\")==3\nassert edit_distance(\"\",\"abc\")==3\nassert edit_distance(\"same\",\"same\")==0",
+    "cpp": "check(editDistance(\"horse\",\"ros\")==3); check(editDistance(\"\",\"abc\")==3); check(editDistance(\"same\",\"same\")==0);"
+  },
+  "Search Rotated Sorted Array": {
+    "python": "assert search_rotated([4,5,6,7,0,1,2],0)==4\nassert search_rotated([],1)==-1\nassert search_rotated([1],2)==-1",
+    "cpp": "check(searchRotated({4,5,6,7,0,1,2},0)==4); check(searchRotated({},1)==-1); check(searchRotated({1},2)==-1);"
+  },
+  "Integer Square Root": {
+    "python": "assert [integer_sqrt(x) for x in [0,1,8,9,2147483647]]==[0,1,2,3,46340]",
+    "cpp": "check(integerSqrt(0)==0); check(integerSqrt(8)==2); check(integerSqrt(2147483647)==46340);"
+  },
+  "Search Row and Column Sorted Matrix": {
+    "python": "assert search_matrix([[1,4,7],[2,5,8],[3,6,9]],6)\nassert not search_matrix([[]],2)\nassert not search_matrix([[1,3],[2,4]],5)",
+    "cpp": "check(searchMatrix({{1,4,7},{2,5,8},{3,6,9}},6)); check(!searchMatrix({{}},2)); check(!searchMatrix({{1,3},{2,4}},5));"
+  },
+  "Move Zeroes": {
+    "python": "a=[0,1,0,3,12]\nassert move_zeroes(a) is a and a==[1,3,12,0,0]\nassert move_zeroes([])==[]",
+    "cpp": "vector<int> a{0,1,0,3,12}; moveZeroes(a); check(a==vector<int>({1,3,12,0,0})); vector<int> b; moveZeroes(b); check(b.empty());"
+  },
+  "Remove Duplicates from Sorted Array": {
+    "python": "a=[1,1,2,2,3]; k=remove_duplicates(a)\nassert k==3 and a[:k]==[1,2,3]\nassert remove_duplicates([])==0",
+    "cpp": "vector<int> a{1,1,2,2,3}; auto k=removeDuplicates(a); check(k==3 && vector<int>(a.begin(),a.begin()+k)==vector<int>({1,2,3}));"
+  },
+  "Dutch National Flag Partition": {
+    "python": "assert dutch_flag([2,0,2,1,1,0])==[0,0,1,1,2,2]\nassert dutch_flag([])==[]",
+    "cpp": "vector<int> a{2,0,2,1,1,0}; dutchFlag(a); check(a==vector<int>({0,0,1,1,2,2}));"
+  },
+  "Boyer–Moore Majority Vote": {
+    "python": "assert majority_element([2,2,1,2])==2\nassert majority_element([1,2]) is None\nassert majority_element([]) is None",
+    "cpp": "check(majorityElement({2,2,1,2})==2); check(!majorityElement({1,2})); check(!majorityElement({}));"
+  },
+  "Maximum Product Subarray": {
+    "python": "assert max_product([2,3,-2,4])==6\nassert max_product([-2,0,-1])==0\nassert max_product([-2,3,-4])==24",
+    "cpp": "check(maxProduct({2,3,-2,4})==6); check(maxProduct({-2,0,-1})==0); check(maxProduct({-2,3,-4})==24);"
+  },
+  "Minimum Length Positive-Sum Window": {
+    "python": "assert min_window_length([2,3,1,2,4,3],7)==2\nassert min_window_length([0,0,4],4)==1\nassert min_window_length([],1)==0",
+    "cpp": "check(minWindowLength({2,3,1,2,4,3},7)==2); check(minWindowLength({0,0,4},4)==1); check(minWindowLength({},1)==0);"
+  },
+  "Floyd–Warshall All-Pairs Shortest Paths": {
+    "python": "assert floyd_warshall([[None,2,9],[None,None,-1],[None,None,None]])==[[0,2,1],[None,0,-1],[None,None,0]]\nassert floyd_warshall([])==[]\ntry: floyd_warshall([[0,-1],[-1,0]])\nexcept ValueError: pass\nelse: assert False",
+    "cpp": "check(floydWarshall({{nullopt,2,9},{nullopt,nullopt,-1},{nullopt,nullopt,nullopt}})==vector<vector<optional<long long>>>({{0,2,1},{nullopt,0,-1},{nullopt,nullopt,0}}));\ncheck(floydWarshall({}).empty()); bool threw=false; try { floydWarshall({{0,-1},{-1,0}}); } catch(const invalid_argument&) {threw=true;} check(threw);"
+  },
+  "Bipartite Graph Check": {
+    "python": "assert is_bipartite([[1,3],[0,2],[1,3],[0,2]])\nassert not is_bipartite([[1,2],[0,2],[0,1]])\nassert not is_bipartite([[0]])\nassert is_bipartite([])",
+    "cpp": "check(isBipartite({{1,3},{0,2},{1,3},{0,2}})); check(!isBipartite({{1,2},{0,2},{0,1}})); check(!isBipartite({{0}})); check(isBipartite({}));"
+  },
+  "Count Undirected Connected Components": {
+    "python": "assert count_components([[1],[0],[],[4],[3]])==3\nassert count_components([])==0",
+    "cpp": "check(countComponents({{1},{0},{},{4},{3}})==3); check(countComponents({})==0);"
+  },
+  "Prim Minimum Spanning Tree (Dense)": {
+    "python": "assert prim_mst([[None,0,5],[0,None,-2],[5,-2,None]])==-2\nassert prim_mst([[None,None],[None,None]]) is None\nassert prim_mst([])==0",
+    "cpp": "check(primMst({{nullopt,0,5},{0,nullopt,-2},{5,-2,nullopt}})==-2); check(!primMst({{nullopt,nullopt},{nullopt,nullopt}})); check(primMst({})==0);"
+  },
+  "Multi-Source BFS Distances": {
+    "python": "assert multi_source_bfs([[1],[0,2],[1],[]],[0,2,0])==[0,1,0,-1]\nassert multi_source_bfs([[]],[])==[-1]",
+    "cpp": "check(multiSourceBfs({{1},{0,2},{1},{}},{0,2,0})==vector<int>({0,1,0,-1})); check(multiSourceBfs({{}},{})==vector<int>({-1}));"
+  },
+  "Euclidean Greatest Common Divisor": {
+    "python": "assert gcd(-54,24)==6\nassert gcd(0,0)==0\nassert gcd(-2147483648,0)==2147483648",
+    "cpp": "check(gcd(-54,24)==6); check(gcd(0,0)==0); check(gcd(numeric_limits<int>::min(),0)==2147483648LL);"
+  },
+  "Sieve of Eratosthenes": {
+    "python": "assert sieve(20)==[2,3,5,7,11,13,17,19]\nassert sieve(0)==[]\nassert sieve(1)==[]",
+    "cpp": "check(sieve(20)==vector<int>({2,3,5,7,11,13,17,19})); check(sieve(0).empty()); check(sieve(1).empty());"
+  },
+  "Modular Exponentiation by Squaring": {
+    "python": "assert mod_power(2,10,1000)==24\nassert mod_power(-2,3,5)==2\nassert mod_power(7,0,1)==0",
+    "cpp": "check(modPower(2,10,1000)==24); check(modPower(-2,3,5)==2); check(modPower(7,0,1)==0);"
+  },
+  "Count Set Bits (Kernighan)": {
+    "python": "assert count_set_bits(0)==0\nassert count_set_bits(11)==3\nassert count_set_bits(0xFFFFFFFF)==32",
+    "cpp": "check(countSetBits(0)==0); check(countSetBits(11)==3); check(countSetBits(0xFFFFFFFFu)==32);"
+  },
+  "Unique Grid Paths": {
+    "python": "assert unique_paths(3,7)==28\nassert unique_paths(0,3)==0\nassert unique_paths(1,1)==1",
+    "cpp": "check(uniquePaths(3,7)==28); check(uniquePaths(0,3)==0); check(uniquePaths(1,1)==1);"
+  },
+  "Minimum Grid Path Sum": {
+    "python": "assert min_path_sum([[1,3,1],[1,5,1],[4,2,1]])==7\nassert min_path_sum([[1,-4],[2,1]])==-2\nassert min_path_sum([])==0",
+    "cpp": "check(minPathSum({{1,3,1},{1,5,1},{4,2,1}})==7); check(minPathSum({{1,-4},{2,1}})==-2); check(minPathSum({})==0);"
+  },
+  "Partition Equal Subset Sum": {
+    "python": "assert can_partition([1,5,11,5])\nassert not can_partition([1,2,3,5])\nassert can_partition([])\nassert can_partition([0,0])",
+    "cpp": "check(canPartition({1,5,11,5})); check(!canPartition({1,2,3,5})); check(canPartition({})); check(canPartition({0,0}));"
+  },
+  "Word Break": {
+    "python": "assert word_break(\"leetcode\",[\"leet\",\"code\"])\nassert not word_break(\"catsandog\",[\"cats\",\"dog\",\"sand\",\"and\",\"cat\"])\nassert word_break(\"\",[])\nassert not word_break(\"a\",[\"\"])",
+    "cpp": "check(wordBreak(\"leetcode\",{\"leet\",\"code\"})); check(!wordBreak(\"catsandog\",{\"cats\",\"dog\",\"sand\",\"and\",\"cat\"})); check(wordBreak(\"\",{})); check(!wordBreak(\"a\",{\"\"}));"
+  },
+  "Decode Ways": {
+    "python": "assert decode_ways(\"226\")==3\nassert decode_ways(\"06\")==0\nassert decode_ways(\"2101\")==1\nassert decode_ways(\"\")==0\nassert decode_ways(\"100\")==0",
+    "cpp": "check(decodeWays(\"226\")==3); check(decodeWays(\"06\")==0); check(decodeWays(\"2101\")==1); check(decodeWays(\"\")==0); check(decodeWays(\"100\")==0);"
+  },
+  "Longest Palindromic Substring": {
+    "python": "assert longest_palindrome(\"babad\")==\"bab\"\nassert longest_palindrome(\"cbbd\")==\"bb\"\nassert longest_palindrome(\"\")==\"\"",
+    "cpp": "check(longestPalindrome(\"babad\")==\"bab\"); check(longestPalindrome(\"cbbd\")==\"bb\"); check(longestPalindrome(\"\")==\"\");"
+  },
+  "Z Algorithm": {
+    "python": "assert z_array(\"aaaaa\")==[0,4,3,2,1]\nassert z_array(\"aabcaab\")==[0,1,0,0,3,1,0]\nassert z_array(\"\")==[]",
+    "cpp": "check(zArray(\"aaaaa\")==vector<int>({0,4,3,2,1})); check(zArray(\"aabcaab\")==vector<int>({0,1,0,0,3,1,0})); check(zArray(\"\").empty());"
+  },
+  "Find All Anagram Windows": {
+    "python": "assert find_anagrams(\"cbaebabacd\",\"abc\")==[0,6]\nassert find_anagrams(\"abab\",\"ab\")==[0,1,2]\nassert find_anagrams(\"abc\",\"\")==[]",
+    "cpp": "check(findAnagrams(\"cbaebabacd\",\"abc\")==vector<int>({0,6})); check(findAnagrams(\"abab\",\"ab\")==vector<int>({0,1,2})); check(findAnagrams(\"abc\",\"\").empty());"
+  },
+  "Run-Length Encoding": {
+    "python": "assert run_length_encode(\"aaabb11\")==[(\"a\",3),(\"b\",2),(\"1\",2)]\nassert run_length_encode(\"\")==[]",
+    "cpp": "check(runLengthEncode(\"aaabb11\")==vector<pair<char,size_t>>({{'a',3},{'b',2},{'1',2}})); check(runLengthEncode(\"\").empty());"
+  },
+  "Merge K Sorted Arrays": {
+    "python": "assert merge_k_arrays([[1,4],[],[1,2,6],[0]])==[0,1,1,2,4,6]\nassert merge_k_arrays([])==[]",
+    "cpp": "check(mergeKArrays({{1,4},{},{1,2,6},{0}})==vector<int>({0,1,1,2,4,6})); check(mergeKArrays({}).empty());"
+  },
+  "Maximum Nonoverlapping Intervals": {
+    "python": "assert max_nonoverlapping([(1,3),(2,4),(3,5),(5,6)])==3\nassert max_nonoverlapping([])==0\nassert max_nonoverlapping([(-3,-1),(-1,1)])==2",
+    "cpp": "check(maxNonoverlapping({{1,3},{2,4},{3,5},{5,6}})==3); check(maxNonoverlapping({})==0); check(maxNonoverlapping({{-3,-1},{-1,1}})==2);"
+  },
+  "Minimum Meeting Rooms": {
+    "python": "assert meeting_rooms([(0,30),(5,10),(15,20)])==2\nassert meeting_rooms([(1,2),(2,3)])==1\nassert meeting_rooms([])==0",
+    "cpp": "check(meetingRooms({{0,30},{5,10},{15,20}})==2); check(meetingRooms({{1,2},{2,3}})==1); check(meetingRooms({})==0);"
+  },
+  "Minimum Jumps to Reach End": {
+    "python": "assert min_jumps([2,3,1,1,4])==2\nassert min_jumps([3,2,1,0,4])==-1\nassert min_jumps([0])==0\nassert min_jumps([])==-1",
+    "cpp": "check(minJumps({2,3,1,1,4})==2); check(minJumps({3,2,1,0,4})==-1); check(minJumps({0})==0); check(minJumps({})==-1);"
+  },
+  "Generate Balanced Parentheses": {
+    "python": "assert generate_parentheses(0)==[\"\"]\nassert generate_parentheses(3)==[\"((()))\",\"(()())\",\"(())()\",\"()(())\",\"()()()\"]",
+    "cpp": "check(generateParentheses(0)==vector<string>({\"\"})); check(generateParentheses(3)==vector<string>({\"((()))\",\"(()())\",\"(())()\",\"()(())\",\"()()()\"}));"
+  },
+  "Combination Sum (Reusable Candidates)": {
+    "python": "assert combination_sum([2,3,6,7,2],7)==[[2,2,3],[7]]\nassert combination_sum([],0)==[[]]\nassert combination_sum([2],3)==[]",
+    "cpp": "check(combinationSum({2,3,6,7,2},7)==vector<vector<int>>({{2,2,3},{7}})); check(combinationSum({},0)==vector<vector<int>>({{}})); check(combinationSum({2},3).empty());"
+  },
+  "Generate K-Combinations": {
+    "python": "assert combinations(4,2)==[[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]\nassert combinations(0,0)==[[]]",
+    "cpp": "check(combinations(4,2)==vector<vector<int>>({{1,2},{1,3},{1,4},{2,3},{2,4},{3,4}})); check(combinations(0,0)==vector<vector<int>>({{}}));"
+  },
+  "Largest Rectangle in Histogram": {
+    "python": "assert largest_rectangle([2,1,5,6,2,3])==10\nassert largest_rectangle([2,2])==4\nassert largest_rectangle([])==0",
+    "cpp": "check(largestRectangle({2,1,5,6,2,3})==10); check(largestRectangle({2,2})==4); check(largestRectangle({})==0);"
+  }
+}

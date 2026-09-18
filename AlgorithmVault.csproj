@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DefaultItemExcludes>$(DefaultItemExcludes);GitHub Upload/**;.verification/**;Tests/**</DefaultItemExcludes>
+    <AssemblyName>alg0Vault</AssemblyName>
+    <RootNamespace>AlgorithmVault</RootNamespace>
+    <ApplicationIcon>Assets\alg0vault.ico</ApplicationIcon>
+    <AssemblyTitle>alg0Vault</AssemblyTitle>
+    <Product>alg0Vault</Product>
+    <Description>Local-first C# algorithm library and semester notes hub.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Assets\alg0vault.ico"/>
+  </ItemGroup>
+</Project>
