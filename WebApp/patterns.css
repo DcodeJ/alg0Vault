@@ -1,0 +1,73 @@
+/* Pattern playbook shares the workspace palette, spacing, and scrolling model. */
+.patterns-view { display: grid; grid-template-columns: 330px minmax(0, 1fr); background: var(--detail); }
+.pattern-library { display: flex; flex-direction: column; min-width: 0; min-height: 0; padding: 28px 18px 16px; border-right: 1px solid var(--border); background: var(--library); overflow: hidden; }
+.pattern-library > :not(.pattern-list) { flex-shrink: 0; }
+.pattern-library .pane-head { margin-bottom: 0; }
+.pattern-intro { font-size: 12px; margin: 0 0 18px; }
+.pattern-mode { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.pattern-mode button { font-size: 12px; padding: 8px; }
+.pattern-mode button[aria-pressed=true] { background: var(--selection); border-color: var(--accent); color: var(--accent); }
+.pattern-panel .question-note { margin-top: 16px; font-size: 11px; }
+.question-template { margin-top: 14px; }
+#patternGroup { margin-top: 10px; min-width: 0; }
+.pattern-list-toolbar { display: flex; justify-content: space-between; align-items: center; margin: 12px 0; font-size: 11px; color: var(--muted); }
+.pattern-list-toolbar .filter-reset { margin: 0; }
+.pattern-list { flex: 1 1 0; min-height: 0; overflow-y: auto; padding-right: 5px; scrollbar-gutter: stable; }
+.pattern-card { width: 100%; display: grid; gap: 7px; text-align: left; cursor: pointer; color: var(--text); background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 9px; }
+.pattern-card:hover { background: var(--hover); border-color: var(--accent); }
+.pattern-card.selected { background: var(--selection); border-color: var(--accent); box-shadow: inset 3px 0 var(--accent); }
+.pattern-card strong { font-size: 14px; line-height: 1.45; }
+.pattern-card > span:not(.pattern-card-group) { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.pattern-card .pattern-card-group { font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.pattern-card small { color: var(--muted); font-size: 10px; }
+.pattern-detail { min-width: 0; min-height: 0; overflow-y: auto; overflow-x: hidden; padding: 32px clamp(20px, 3vw, 48px) 48px; scrollbar-gutter: stable; }
+.pattern-lesson { max-width: 1000px; margin: auto; }
+.pattern-hero { margin: 28px 0; }
+.pattern-hero h1 { font-size: clamp(26px, 2.6vw, 38px); line-height: 1.2; letter-spacing: -.035em; margin: 14px 0; }
+.pattern-hero p { color: var(--muted); font-size: 15px; line-height: 1.8; }
+.pattern-complexity { color: var(--mint); font-size: 12px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--field); }
+.pattern-two-col, .pattern-decision-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.pattern-panel { padding: 22px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); margin-bottom: 18px; min-width: 0; }
+.pattern-panel h2, .pattern-code-section h2 { margin: 0 0 14px; font-size: 15px; letter-spacing: -.015em; }
+.pattern-panel p, .pattern-panel li { font-size: 13px; line-height: 1.8; }
+.pattern-panel p { margin: 0; color: var(--muted); }
+.pattern-panel ul, .solve-checklist { margin: 0; padding-left: 21px; color: var(--muted); }
+.pattern-panel li + li, .solve-checklist li + li { margin-top: 10px; }
+.invariant-panel { border-top: 3px solid var(--accent); }
+.worked-example { border-left: 3px solid var(--mint); }
+.pattern-roadmap { padding: 18px 20px; background: var(--soft); border: 1px solid var(--border); border-radius: 12px; }
+.pattern-roadmap > summary { cursor: pointer; font-size: 13px; font-weight: 650; }
+.pattern-roadmap .solve-checklist, .pattern-roadmap p { font-size: 12px; line-height: 1.8; }
+.pattern-roadmap strong { color: var(--text); }
+.pattern-decision-grid { margin-top: 18px; }
+.pattern-decision { display: grid; gap: 8px; background: var(--field); border: 1px solid var(--border); color: var(--text); padding: 14px; border-radius: 10px; text-align: left; cursor: pointer; }
+.pattern-decision span { font-size: 12px; line-height: 1.7; color: var(--muted); }
+.pattern-decision:hover { border-color: var(--accent); }
+.pattern-code-section { margin: 26px 0; }
+.pattern-code-section > p { font-size: 12px; }
+.pattern-code-section .codebox { min-height: 0; max-height: 560px; }
+.pattern-code-section h2 { margin: 0; }
+.pattern-question { border: 1px solid var(--border); border-radius: 9px; background: var(--field); padding: 14px 16px; margin-top: 10px; }
+.pattern-question summary { font-size: 13px; font-weight: 600; cursor: pointer; }
+.pattern-question p { margin-top: 12px; }
+.pattern-question .subtle { font-size: 11px; }
+#patternStudyNote { margin-top: 18px; }
+.pattern-related { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.pattern-related button { font-size: 12px; }
+.pattern-lesson a { color: var(--accent); text-underline-offset: 3px; }
+.pattern-lesson summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 3px; }
+@media (max-width: 1200px) {
+  .patterns-view { grid-template-columns: 290px minmax(0, 1fr); }
+  .pattern-two-col, .pattern-decision-grid { grid-template-columns: 1fr; gap: 0; }
+  .pattern-decision + .pattern-decision { margin-top: 10px; }
+}
+@media (max-width: 900px) {
+  .patterns-view { display: block; overflow: visible; }
+  .pattern-library { padding: 22px; border-right: 0; border-bottom: 1px solid var(--border); }
+  .pattern-list { flex: none; max-height: 320px; }
+  .pattern-detail { overflow: visible; padding: 24px; }
+}
+@media (max-width: 520px) {
+  .pattern-detail { padding: 20px 16px; }
+  .pattern-panel { padding: 18px; }
+}

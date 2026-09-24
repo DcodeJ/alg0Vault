@@ -1,0 +1,8 @@
+bin/
+obj/
+*.user
+*.suo
+.vs/
+GitHub Upload/
+.verification/
+alg0Vault-backup-*.json

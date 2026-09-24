@@ -1,0 +1,66 @@
+/* Coordinated palettes. Original themes remain available and keep their defaults. */
+body[data-theme=ocean] {
+  --app:#071a28; --top:#0c2638; --side:#0c2638; --library:#102e42; --detail:#071a28;
+  --field:#0a2232; --card:#102e42; --hover:#173d54; --selection:#16415a; --border:#365b70;
+  --text:#eafaff; --muted:#b0ccdb; --section:#b0ccdb; --accent:#69d5ff; --soft:#16415a; --mint:#7de4c8; --danger:#ffa3b4;
+  --button-bg:#69d5ff; --button-hover:#9ae3ff; --button-text:#072337;
+}
+body[data-theme=emerald] {
+  --app:#091c16; --top:#10291f; --side:#10291f; --library:#143326; --detail:#091c16;
+  --field:#0d241b; --card:#143326; --hover:#204632; --selection:#20513b; --border:#3c6851;
+  --text:#eafff4; --muted:#b5d5c3; --section:#b5d5c3; --accent:#86efac; --soft:#20513b; --mint:#8ee8db; --danger:#ffa3b4;
+  --button-bg:#86efac; --button-hover:#aff8c9; --button-text:#092819;
+}
+body[data-theme=rose] {
+  --app:#24101f; --top:#32172b; --side:#32172b; --library:#3b1d33; --detail:#24101f;
+  --field:#2c1327; --card:#3b1d33; --hover:#502841; --selection:#54283f; --border:#794764;
+  --text:#fff0f7; --muted:#dfbcd0; --section:#dfbcd0; --accent:#ff9dca; --soft:#54283f; --mint:#a8e6d8; --danger:#ffabb7;
+  --button-bg:#ff9dca; --button-hover:#ffc4df; --button-text:#321023;
+}
+body[data-theme=amber] {
+  --app:#21190d; --top:#2c2314; --side:#2c2314; --library:#352b19; --detail:#21190d;
+  --field:#261e10; --card:#352b19; --hover:#483a20; --selection:#514020; --border:#756139;
+  --text:#fff7e6; --muted:#decca7; --section:#decca7; --accent:#ffd16b; --soft:#514020; --mint:#abe0b0; --danger:#ffa7b2;
+  --button-bg:#ffd16b; --button-hover:#ffe3a0; --button-text:#2b2008;
+}
+body[data-theme=crimson] {
+  --app:#231116; --top:#301a21; --side:#301a21; --library:#3b2028; --detail:#231116;
+  --field:#2e171d; --card:#3b2028; --hover:#512c36; --selection:#5a2a38; --border:#7b4957;
+  --text:#fff1f3; --muted:#ddbac2; --section:#ddbac2; --accent:#ff9caa; --soft:#5a2a38; --mint:#a4e7d7; --danger:#ffb0bd;
+  --button-bg:#ff9caa; --button-hover:#ffc2ca; --button-text:#321019;
+}
+body[data-theme=slate] {
+  --app:#11161e; --top:#1b2431; --side:#1b2431; --library:#222e3e; --detail:#11161e;
+  --field:#151e2b; --card:#222e3e; --hover:#304056; --selection:#334461; --border:#53667f;
+  --text:#f3f6fb; --muted:#bfcbdb; --section:#bfcbdb; --accent:#b3c5f2; --soft:#334461; --mint:#9ce1d1; --danger:#ffa6b8;
+  --button-bg:#b3c5f2; --button-hover:#d4dffa; --button-text:#14223c;
+}
+body[data-theme=sky] {
+  color-scheme:light;
+  --app:#edf6ff; --top:#ffffff; --side:#e1effd; --library:#f1f7ff; --detail:#ffffff;
+  --field:#f5f9ff; --card:#edf5ff; --hover:#dcecff; --selection:#d3e9ff; --border:#9fb9d1;
+  --text:#132c46; --muted:#3c5874; --section:#3c5874; --accent:#075e9c; --soft:#d3e9ff; --mint:#166b41; --danger:#a72c43;
+  --button-bg:#075e9c; --button-hover:#084b7a; --button-text:#ffffff; --shadow:0 18px 60px #17385920;
+}
+body[data-theme=paper] {
+  color-scheme:light;
+  --app:#f6f1e5; --top:#fffdf8; --side:#eee6d6; --library:#faf6ec; --detail:#fffdf8;
+  --field:#f7f2e7; --card:#f3ecdf; --hover:#e9dfcd; --selection:#e8dabc; --border:#b9a887;
+  --text:#332d20; --muted:#66583d; --section:#66583d; --accent:#725514; --soft:#e8dabc; --mint:#226540; --danger:#9b2940;
+  --button-bg:#725514; --button-hover:#58400b; --button-text:#ffffff; --shadow:0 18px 60px #45341420;
+}
+.primary { background:var(--button-bg,#6554db); color:var(--button-text,#fff); }
+.primary:hover { background:var(--button-hover,#7665ee); }
+body[data-theme=sky] option, body[data-theme=paper] option { color:var(--text); background:var(--field); }
+body[data-theme=sky] .local-pill[data-state=error], body[data-theme=paper] .local-pill[data-state=error] { color:var(--danger); border-color:var(--danger); }
+body[data-theme=sky] .badge.easy, body[data-theme=paper] .badge.easy { color:var(--mint); }
+body[data-theme=sky] .badge.medium, body[data-theme=paper] .badge.medium { color:#76520a; }
+body[data-theme=sky] .badge.hard, body[data-theme=paper] .badge.hard { color:var(--danger); }
+.learning-markdown { font-size:16px; }
+#learningCourses { margin-top:12px; }
+.course-progress { color:var(--muted); font-size:12px; margin:5px 2px 0; }
+.learning-card small { font-size:12px; }
+.learning-card strong { font-size:14px; }
+.learning-library label { font-size:14px; }
+@media(max-width:900px) { .learning-library { height:720px; } }
+@media(max-width:520px) { .top-actions label { flex-wrap:wrap; gap:4px; } #themeSelect { max-width:150px; } }

@@ -1,0 +1,158 @@
+/* Shared by library previews/editors, interview solutions, pattern templates, and lessons. */
+body[data-theme=current] {
+  --code-bg: #101925;
+  --code-text: #e3eaf5;
+  --code-keyword: #7dbaff;
+  --code-string: #efb19a;
+  --code-comment: #a4c88d;
+  --code-number: #b8dfb1;
+  --code-border: #40556f;
+  --code-selection: #243c5a;
+}
+body[data-theme=dark] {
+  --code-bg: #16181d;
+  --code-text: #e6e8ed;
+  --code-keyword: #8bbcff;
+  --code-string: #eab096;
+  --code-comment: #a1be85;
+  --code-number: #b8d9a6;
+  --code-border: #4c5466;
+  --code-selection: #293b54;
+}
+body[data-theme=purple] {
+  --code-bg: #21142f;
+  --code-text: #f3eaff;
+  --code-keyword: #cfabff;
+  --code-string: #ffc2a8;
+  --code-comment: #a9d59b;
+  --code-number: #9ce2d0;
+  --code-border: #6b4d85;
+  --code-selection: #493258;
+}
+body[data-theme=white] {
+  --code-bg: #ffffff;
+  --code-text: #253047;
+  --code-keyword: #6433a3;
+  --code-string: #9c3620;
+  --code-comment: #416c39;
+  --code-number: #006a58;
+  --code-border: #a9b4c8;
+  --code-selection: #e6eaf5;
+}
+body[data-theme=ocean] {
+  --code-bg: #082335;
+  --code-text: #e1f5ff;
+  --code-keyword: #7cd5ff;
+  --code-string: #ffc298;
+  --code-comment: #a7d5b1;
+  --code-number: #bfe69c;
+  --code-border: #376a83;
+  --code-selection: #19445d;
+}
+body[data-theme=emerald] {
+  --code-bg: #0b261c;
+  --code-text: #e8fff2;
+  --code-keyword: #97cbff;
+  --code-string: #ffd1a0;
+  --code-comment: #b3ce9e;
+  --code-number: #8ce4cd;
+  --code-border: #3f705b;
+  --code-selection: #234c38;
+}
+body[data-theme=rose] {
+  --code-bg: #2d1527;
+  --code-text: #ffeaf5;
+  --code-keyword: #e2b1ff;
+  --code-string: #ffc1a0;
+  --code-comment: #b2d6ae;
+  --code-number: #9ce3d5;
+  --code-border: #85546f;
+  --code-selection: #553248;
+}
+body[data-theme=amber] {
+  --code-bg: #2d2211;
+  --code-text: #fff4db;
+  --code-keyword: #a4ccff;
+  --code-string: #ffcba2;
+  --code-comment: #bbd5a0;
+  --code-number: #8fe0cb;
+  --code-border: #7d683d;
+  --code-selection: #4c3c23;
+}
+body[data-theme=crimson] {
+  --code-bg: #2b141c;
+  --code-text: #fff0f3;
+  --code-keyword: #c5b5ff;
+  --code-string: #ffc3a2;
+  --code-comment: #b7d3a6;
+  --code-number: #97e0d2;
+  --code-border: #815262;
+  --code-selection: #51313d;
+}
+body[data-theme=slate] {
+  --code-bg: #18212f;
+  --code-text: #f0f5ff;
+  --code-keyword: #a9c4ff;
+  --code-string: #eec7a7;
+  --code-comment: #b6ce9c;
+  --code-number: #a6e0d3;
+  --code-border: #526884;
+  --code-selection: #2c3c54;
+}
+body[data-theme=sky] {
+  --code-bg: #eff7ff;
+  --code-text: #16324b;
+  --code-keyword: #324ab0;
+  --code-string: #983818;
+  --code-comment: #3c6638;
+  --code-number: #076448;
+  --code-border: #9cb8d0;
+  --code-selection: #d6e8fa;
+}
+body[data-theme=paper] {
+  --code-bg: #fbf5e9;
+  --code-text: #362e20;
+  --code-keyword: #6041a0;
+  --code-string: #953a21;
+  --code-comment: #496b32;
+  --code-number: #11664d;
+  --code-border: #b8a782;
+  --code-selection: #ebdfc8;
+}
+/* Higher specificity replaces legacy fixed-dark and white-only overrides. */
+body[data-theme] :is(.codebox, .code-input, .learning-markdown pre) {
+  background: var(--code-bg);
+  color: var(--code-text);
+  border-color: var(--code-border);
+  border-top: 3px solid var(--accent);
+  caret-color: var(--code-text);
+  scrollbar-color: var(--code-border) var(--code-bg);
+}
+body[data-theme] :is(.codebox, .learning-markdown pre) code {
+  color: inherit;
+  background: transparent;
+}
+body[data-theme] :is(.codebox, .learning-markdown pre) .kw { color: var(--code-keyword); }
+body[data-theme] :is(.codebox, .learning-markdown pre) .str { color: var(--code-string); }
+body[data-theme] :is(.codebox, .learning-markdown pre) .com { color: var(--code-comment); }
+body[data-theme] :is(.codebox, .learning-markdown pre) .num { color: var(--code-number); }
+body[data-theme] :is(.codebox, .codebox *, .code-input, .learning-markdown pre, .learning-markdown pre *)::selection {
+  background: var(--code-selection);
+  color: var(--code-text);
+}
+body[data-theme] .code-input:focus {
+  border-color: var(--accent);
+  outline-color: var(--accent);
+}
+body[data-theme] .learning-markdown table {
+  background: var(--code-bg);
+  color: var(--code-text);
+}
+body[data-theme] .learning-markdown :is(th, td) { border-color: var(--code-border); }
+body[data-theme] .learning-markdown th {
+  background: var(--code-selection);
+  color: var(--code-text);
+}
+body[data-theme] .learning-markdown tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--code-selection) 40%, var(--code-bg));
+}
